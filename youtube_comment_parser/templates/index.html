@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouComment</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="header">
+            <div class="header-left">
+                <h1><span class="you">You</span>Comment</h1>
+            </div>
+            <div class="header-right">
+                <h3 class="blink-button">About</h3>
+            </div>
+        </div>
+        <div class="main-container">
+
+            <form method="post">
+                {% csrf_token %}
+                <div class="search-box">
+
+                    <div class="search-icon">
+                        <button type="submit">
+                            <img src="{% static 'image/search-icon.png' %}" height="30" width="30">
+                        </button>
+                    </div>
+                    <div class="search-text">
+                        <input name="url" type="text" class="input" placeholder="Input URL...">
+                    </div>
+
+
+                </div>
+            </form>
+
+
+
+
+            <div class="results-container">
+                {% if not angry and not good and not bad and not neutral and not error %}
+                    <h6 class="h6">Enter the link from his Youtube channel,<br> and we will try to review your video</h6>
+                {% endif %}
+                {% if neutral %}
+                    <h6 class="h6">All comments are divided into categories</h6>
+                    <ul>
+                        <li class="h6">Angry comments - {{angry}}</li>
+                        <li class="h6">Good comments - {{good}}</li>
+                        <li class="h6">Bad comments - {{bad}}</li>
+                        <li class="h6">Neutral comments - {{neutral}}</li>
+                    </ul>
+                    <h6 class="h6">if most of your comments are neutral then these are comments in languages other than English</h6>
+                {% endif %}
+                {% if error and not angry and not good and not bad and not neutral  %}
+                    <p>{{error}}</p>
+}
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</body>
+</html>

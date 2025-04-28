@@ -1,0 +1,136 @@
+.wrapper{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: lightgray;
+
+}
+
+.header {
+    font-family: 'Roboto', sans-serif;
+    width: calc(100% - 80px); /* Учитываем margin */
+    height: 80px; /* Высота шапки */
+    margin: 20px; /* Внешний отступ со всех сторон */
+    padding: 10px 20px; /* Внутренние отступы */
+
+    display: flex; /* Делаем контейнер гибким */
+    justify-content: space-between; /* Разделяем на две части */
+    align-items: center; /* Выравниваем элементы по центру */
+
+    background-color: #333; /* Цвет фона */
+    color: white; /* Цвет текста */
+    border-radius: 10px; /* Закругленные углы */
+}
+
+.you{
+    color:red;
+}
+
+/* Левая часть (например, логотип) */
+.header-left {
+    padding-left:150px;
+    font-size: 24px; /* Размер шрифта */
+    font-weight: bold;
+}
+
+/* Правая часть (например, меню) */
+.header-right {
+    display: flex;
+    padding-right:250px;
+    gap: 48px; /* Расстояние между элементами */
+}
+
+
+/* Основной контейнер */
+.main-container {
+    max-width: calc(100% - 400px); /* Учитываем отступы слева и справа */
+    margin: 0 auto; /* Центрируем контейнер */
+    padding: 20px;
+    background-color: #f5f5f5;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    background-size: cover; /* Растягиваем на всю ширину */
+}
+
+/* Контейнер поисковой строки */
+.search-box {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    gap: 20px; /* Отступ между иконкой и текстом */
+}
+
+/* Иконка поиска */
+.search-icon {
+    width: 30px;
+    height: 30px;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/* Текстовое поле (контейнер вместо input) */
+.search-text {
+    flex-grow: 1; /* Растягивается на всю доступную ширину */
+    font-size: 35px;
+    color: #333;
+    padding: 5px;
+}
+
+/* Контейнер для отображения ответа */
+.results-container {
+    color: grey;
+    margin-top: 10px;
+    padding: 15px;
+    padding-bottom: 300px;
+    border-radius: 8px;
+    min-height: 50px;
+}
+
+
+
+
+input {
+    width: 500px; /* Ширина поля */
+    height: 20px; /* Высота */
+    font-size: 16px; /* Размер текста */
+    padding: 10px; /* Внутренний отступ */
+    border: 2px solid #ccc; /* Граница */
+    border-radius: 8px; /* Закругленные углы */
+    outline: none; /* Убираем контур при клике */
+    transition: 0.3s; /* Плавные анимации */
+}
+
+/* Изменение при наведении */
+input:hover {
+    border-color: #888;
+}
+
+/* Изменение при фокусе (клике) */
+input:focus {
+    border-color: #007bff; /* Синий цвет границы */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Тень при фокусе */
+}
+
+.h6{
+    font-size: 25px;
+    font-family: 'Roboto', sans-serif;
+}
+
+
+
+@keyframes blink {
+    0% { background-color: red; }
+    50% { background-color: white; }
+    100% { background-color: red; }
+}
+
+.blink-button {
+    padding: 10px 20px;
+    font-size: 18px;
+    color: black;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    animation: blink 1s infinite; /* Бесконечная анимация */
+}

@@ -1,0 +1,6 @@
+django
+langdetect
+textblob
+python -m textblob.download_corpora
+selenium
+webdriver_manager
